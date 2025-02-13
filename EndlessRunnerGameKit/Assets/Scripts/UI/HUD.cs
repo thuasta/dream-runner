@@ -67,7 +67,22 @@ public class HUD : MonoBehaviour
             ammoBar.transform.localScale = new Vector2(ammoBarWidthEased, transform.localScale.y);
         }
         
-        Times.text = FormatTime(NewPlayer.Instance.currentTime);
+        if (Times != null && NewPlayer.Instance != null)
+        {
+            Times.text = FormatTime(NewPlayer.Instance.currentTime);
+        }
+        else
+        {
+            if (Times == null)
+            {
+                Debug.LogWarning("Times is null in the HUD script.");
+            }
+            if (NewPlayer.Instance == null)
+            {
+                Debug.LogWarning("NewPlayer.Instance is null in the HUD script.");
+            }
+        }
+        
         if(!NewPlayer.Instance.frozen && NewPlayer.Instance.firstLanded && !NewPlayer.Instance.stopTime)
         {
             NewPlayer.Instance.currentTime -= Time.deltaTime;

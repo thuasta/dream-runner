@@ -510,7 +510,19 @@ public class NewPlayer : PhysicsObject
     private IEnumerator StopEffectCoroutine(Collectable.ItemType itemType, float time)
     {
         yield return new WaitForSeconds(time);
-        if (itemType == Collectable.ItemType.boxing)
+        if (itemType == Collectable.ItemType.diode1)
+        {
+            runRightSpeed = 1;
+        }
+        else if (itemType == Collectable.ItemType.diode2)
+        {
+            runRightSpeed = 1;
+        }
+        else if (itemType == Collectable.ItemType.cup)
+        {
+            runRightSpeed = 1;
+        }
+        else if (itemType == Collectable.ItemType.boxing)
         {
             super_armor = false;
         }
