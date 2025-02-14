@@ -61,6 +61,10 @@ public class Collectable : MonoBehaviour
         else if (itemType == ItemType.Coin)
         {
             NewPlayer.Instance.coins += itemAmount;
+            if(NewPlayer.Instance.coins > NewPlayer.Instance.max_coins)
+            {
+                NewPlayer.Instance.coins = NewPlayer.Instance.max_coins;
+            }
         }
         else if (itemType == ItemType.Health)
         {

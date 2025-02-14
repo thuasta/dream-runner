@@ -13,7 +13,8 @@ public class HUD : MonoBehaviour
     [Header ("Reference")]
     public Animator animator;
     [SerializeField] private GameObject ammoBar;
-    public TextMeshProUGUI coinsMesh;
+    public Slider coins_slider;
+    public TextMeshProUGUI percent;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private Image inventoryItemGraphic;
     [SerializeField] private GameObject startUp;
@@ -44,7 +45,8 @@ public class HUD : MonoBehaviour
     void Update()
     {
         //Update coins text mesh to reflect how many coins the player has! However, we want them to count up.
-        coinsMesh.text = Mathf.Round(coinsEased).ToString();
+        coins_slider.value = coinsEased / NewPlayer.Instance.max_coins;
+        percent.text = string.Format("{0}%", Mathf.RoundToInt(coins_slider.value * 100));
         coinsEased += ((float)NewPlayer.Instance.coins - coinsEased) * Time.deltaTime * 5f;
 
         if (coinsEased >= coins)

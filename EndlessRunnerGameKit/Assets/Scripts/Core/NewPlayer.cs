@@ -65,6 +65,7 @@ public class NewPlayer : PhysicsObject
     [Header ("Inventory")]
     public float ammo;
     public int coins;
+    public int max_coins = 20;
     public int health;
     public int maxHealth;
     public int maxAmmo;

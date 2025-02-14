@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
             deathMenu.SetActive(true);
         }
 
-        if(NewPlayer.Instance.coins >= 20)
+        if(NewPlayer.Instance.coins == NewPlayer.Instance.max_coins && NewPlayer.Instance.currentTime > 0)
         {
             NewPlayer.Instance.runRightSpeed = 0;
             NewPlayer.Instance.stopTime = true;
