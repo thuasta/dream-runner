@@ -5,11 +5,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.Services.Leaderboards;
+using Unity.Services.Authentication;
 
 public class LeaderboardsMenu : Panel
 {
 
-    [SerializeField] private int playersPerPage = 25;
+    [SerializeField] private int playersPerPage = 10;
     [SerializeField] private LeaderboardsPlayerItem playerItemPrefab = null;
     [SerializeField] private RectTransform playersContainer = null;
     [SerializeField] public TextMeshProUGUI pageText = null;
@@ -17,6 +18,8 @@ public class LeaderboardsMenu : Panel
     [SerializeField] private Button prevButton = null;
     [SerializeField] private Button closeButton = null;
     [SerializeField] private Button addScoreButton = null;
+    [SerializeField] private TextMeshProUGUI playerRankText = null;
+    [SerializeField] private TextMeshProUGUI playerScoreText = null;
 
     private int currentPage = 1;
     private int totalPages = 0;
@@ -80,8 +83,16 @@ public class LeaderboardsMenu : Panel
             ClearPlayersList();
             for (int i = 0; i < scores.Results.Count; i++)
             {
+                if(AuthenticationService.Instance.PlayerName == scores.Results[i].PlayerName)
+                {
+                    playerRankText.text = "Your rank: " + (scores.Results[i].Rank + 1).ToString();
+                    playerScoreText.text = "Score: " + (scores.Results[i].Score).ToString();
+                }
+                Vector2 spawnPosition = new Vector2(0, -75-i * 150); 
                 LeaderboardsPlayerItem item = Instantiate(playerItemPrefab, playersContainer);
                 item.Initialize(scores.Results[i]);
+                RectTransform rectTransform = item.GetComponent<RectTransform>();
+                rectTransform.anchoredPosition = spawnPosition;
             }
             totalPages = Mathf.CeilToInt((float)scores.Total / (float)scores.Limit);
             currentPage = page;

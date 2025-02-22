@@ -10,10 +10,16 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject deathMenu;
     [SerializeField] private GameObject victoryMenu;
     [SerializeField] private GameObject timeoutMenu;
+    [SerializeField] private GameObject audioTrigger;
 
     // Update is called once per frame
     void Update()
     {
+        if(NewPlayer.Instance.firstLanded)
+        {
+            audioTrigger.SetActive(true);
+        }
+
         if(NewPlayer.Instance.health <= 0 && NewPlayer.Instance.currentTime > 0 && NewPlayer.Instance.coins < 20)
         {
             NewPlayer.Instance.frozen = true;

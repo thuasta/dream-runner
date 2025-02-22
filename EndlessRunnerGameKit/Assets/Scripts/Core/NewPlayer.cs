@@ -245,12 +245,12 @@ public class NewPlayer : PhysicsObject
                 }
                 else
                 {
-                    firstLanded = true;
                     animator.SetBool("grounded", false);
                 }
             }
             else
             {
+                firstLanded = true;
                 fallForgivenessCounter = 0;
                 jumpCounter = 0;
                 Debug.Log("LAND!");

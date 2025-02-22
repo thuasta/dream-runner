@@ -3886,7 +3886,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1055268072}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1236024959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdfb8c7c50f424af3b7e07b7a9eac382, type: 3}
@@ -4615,7 +4615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1010168388952006, guid: 0f618da174ea44266865b50a04995f3c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4074902142343532, guid: 0f618da174ea44266865b50a04995f3c, type: 3}
       propertyPath: m_RootOrder
@@ -4658,7 +4658,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sound
       value: 
-      objectReference: {fileID: 8300000, guid: 34ae96b3c92b44cebbdf3c3444d0204e, type: 3}
+      objectReference: {fileID: 8300000, guid: b7f0969b7de61fc45a5f6cfabf6ea1fe, type: 3}
     - target: {fileID: 114960326724290942, guid: 0f618da174ea44266865b50a04995f3c,
         type: 3}
       propertyPath: volume
@@ -4667,6 +4667,11 @@ PrefabInstance:
     - target: {fileID: 114960326724290942, guid: 0f618da174ea44266865b50a04995f3c,
         type: 3}
       propertyPath: autoPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960326724290942, guid: 0f618da174ea44266865b50a04995f3c,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114960326724290942, guid: 0f618da174ea44266865b50a04995f3c,
@@ -5323,6 +5328,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce1bbe003f390412a80f34448b33c93c, type: 3}
+--- !u!1 &1236024959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1010168388952006, guid: 0f618da174ea44266865b50a04995f3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1055268072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1250458747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 960903754245672878, guid: c038d6dc83f234fbd85719c6e943daf4,
@@ -10444,6 +10455,7 @@ MonoBehaviour:
   deathMenu: {fileID: 1994993028377450}
   victoryMenu: {fileID: 1825578620}
   timeoutMenu: {fileID: 418841509}
+  audioTrigger: {fileID: 1236024959}
 --- !u!114 &5809405050015906011
 MonoBehaviour:
   m_ObjectHideFlags: 0

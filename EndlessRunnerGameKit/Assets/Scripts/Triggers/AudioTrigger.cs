@@ -22,7 +22,7 @@ public class AudioTrigger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Reset(false, sound, 0);
+        Reset(false, sound, 1);
         StartCoroutine(EnableCollider());
     }
 
